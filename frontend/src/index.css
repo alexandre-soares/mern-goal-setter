@@ -157,7 +157,7 @@ h3 {
   text-align: left;
 }
 
-.goal__importance {
+.goal__priority {
   border-radius: 0.7rem;
 
   font-weight: 600;
@@ -168,15 +168,15 @@ h3 {
   margin-right: auto;
 }
 
-.goal__importance.high {
+.goal__priority.high {
   background-color: #fbdede;
   color: #d47372;
 }
-.goal__importance.medium {
+.goal__priority.medium {
   background-color: #fcf4db;
   color: #fe9f2b;
 }
-.goal__importance.low {
+.goal__priority.low {
   background-color: #ddf5fc;
   color: #8ed3e8;
 }
