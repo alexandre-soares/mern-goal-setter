@@ -1,18 +1,24 @@
-import { useDispatch } from 'react-redux'
-import { deleteGoal } from '../features/goals/goalSlice'
+import { useDispatch } from "react-redux";
+import { deleteGoal } from "../features/goals/goalSlice";
+
+import { FaTrashAlt } from "react-icons/fa";
 
 function GoalItem({ goal }) {
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
   return (
-    <div className='goal'>
-      <div>{new Date(goal.createdAt).toLocaleString('en-US')}</div>
-      <h2>{goal.text}</h2>
-      <button onClick={() => dispatch(deleteGoal(goal._id))} className='close'>
-        X
+    <div className="goal">
+      <span className="goal__text">{goal.text}</span>
+      <span className={`goal__importance ${goal.importance.toLowerCase()}`}>
+        {goal.importance}
+      </span>
+      <span className="goal__date">
+        {new Date(goal.createdAt).toLocaleString("en-US")}
+      </span>
+      <button onClick={() => dispatch(deleteGoal(goal._id))} className="close">
+        <FaTrashAlt />
       </button>
     </div>
-  )
+  );
 }
 
-export default GoalItem
+export default GoalItem;
