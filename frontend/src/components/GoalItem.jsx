@@ -8,9 +8,11 @@ function GoalItem({ goal }) {
   return (
     <div className="goal">
       <span className="goal__text">{goal.text}</span>
-      <span className={`goal__priority ${goal.priority.toLowerCase()}`}>
-        {goal.priority}
-      </span>
+      {goal.priority ? (
+        <span className={`goal__priority ${goal.priority.toLowerCase()}`}>
+          {goal.priority}
+        </span>
+      ) : null}
       <span className="goal__date">
         {new Date(goal.createdAt).toLocaleString("en-US")}
       </span>

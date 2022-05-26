@@ -4,16 +4,16 @@ import { createGoal } from "../features/goals/goalSlice";
 
 function GoalForm() {
   const [text, setText] = useState("");
-  const [importance, setImportance] = useState("High");
+  const [priority, setPriority] = useState("High");
 
   const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createGoal({ text, importance }));
+    dispatch(createGoal({ text, priority }));
     setText("");
-    setImportance("");
+    setPriority("");
   };
 
   return (
@@ -30,12 +30,12 @@ function GoalForm() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="text">Importance</label>
+          <label htmlFor="text">priority</label>
           <select
-            name="importance"
-            id="importance"
-            value={importance}
-            onChange={(e) => setImportance(e.target.value)}
+            name="priority"
+            id="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
           >
             <option value="High">High</option>
             <option value="Medium">Medium</option>
