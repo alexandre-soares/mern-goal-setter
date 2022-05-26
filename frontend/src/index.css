@@ -81,6 +81,13 @@ h3 {
   margin-bottom: 60px;
 }
 
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 .header ul li {
   display: flex;
   align-items: center;
@@ -208,6 +215,13 @@ h3 {
   text-align: left;
   display: block;
   margin: 0 0 5px 3px;
+}
+
+.no-items {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
