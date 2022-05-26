@@ -5,19 +5,12 @@ const goalSchema = mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'User'
+      ref: 'User',
     },
     text: {
       type: String,
-      required: [true, "Please add a text value"],
+      required: [true, 'Please add a text value'],
     },
-    importance: {
-      type: String,
-      required: [true, "Please add an importance"],
-    },
-    deadline: {
-      type: String,
-    }
   },
   {
     timestamps: true,

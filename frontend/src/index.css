@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,23 +7,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
-  background-color: hsla(0, 100%, 50%, 1);
-  background-image: radial-gradient(
-      at 40% 20%,
-      hsla(28, 100%, 74%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0px, transparent 50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 a {
@@ -50,26 +35,12 @@ h3 {
   margin-bottom: 10px;
 }
 
-.logo a {
-  background-color: hsla(22, 100%, 77%, 1);
-  border-radius: 0.7rem;
-  padding: 1rem;
-  color: white;
-  font-weight: 600;
-}
-
 .container {
   width: 100%;
-  min-width: 80vw;
-  height: 80vh;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 3rem 5rem;
+  padding: 0 20px;
   text-align: center;
-  overflow-y: scroll;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .header {
@@ -85,14 +56,10 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
 }
 
 .header ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  margin-left: 20px;
 }
 
 .header ul li a {
@@ -119,85 +86,36 @@ h3 {
   color: #828282;
 }
 
-.dashboard__header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-}
-
-.dashboard__header h1 {
-  margin-bottom: 0;
-}
-
 .goals {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-top: 2rem;
 }
 
 .goal {
+  background-color: #f4f4f4;
+  margin: 10px 0;
+  padding: 20px 0 10px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.goal:not(:last-child) {
-  border-bottom: 1px solid lightgray;
-}
-
-.goal__text {
-  font-size: 1rem;
-  color: #6d6786;
-  font-weight: 600;
-  flex: 0 0 30%;
-  text-align: left;
-}
-
-.goal__importance {
-  border-radius: 0.7rem;
-
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  flex: 0 0 9%;
-  margin-right: auto;
-}
-
-.goal__importance.high {
-  background-color: #fbdede;
-  color: #d47372;
-}
-.goal__importance.medium {
-  background-color: #fcf4db;
-  color: #fe9f2b;
-}
-.goal__importance.low {
-  background-color: #ddf5fc;
-  color: #8ed3e8;
-}
-
-.goal__date {
-  color: #6d6786;
-  font-weight: 600;
-  text-align: left;
-  flex: 0 0 20%;
-  display: block;
-  margin-right: auto;
 }
 
 .goal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   cursor: pointer;
   border: none;
   background: none;
 }
 
+.form,
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .form-group {
-  margin: 2rem 0;
+  margin-bottom: 10px;
 }
 
 .form-group input,
@@ -217,13 +135,6 @@ h3 {
   margin: 0 0 5px 3px;
 }
 
-.no-items {
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .btn {
   padding: 10px 20px;
   border: 1px solid #000;
@@ -238,12 +149,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.btn__add-goal {
-  background-color: #50d38d;
-  color: white;
-  border: none;
 }
 
 .btn svg {
