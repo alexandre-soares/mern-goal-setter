@@ -22,8 +22,10 @@ const setGoal = asyncHandler(async (req, res) => {
   }
 
   const goal = await Goal.create({
-    text: req.body.text,
     user: req.user.id,
+    text: req.body.text,
+    importance: req.body.importance,
+    deadline: req.body.deadline,
   });
 
   res.status(200).json(goal);

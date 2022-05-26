@@ -2,16 +2,19 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createGoal } from "../features/goals/goalSlice";
 
+
 function GoalForm() {
   const [text, setText] = useState("");
+  const [importance, setImportance] = useState("High");
 
   const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createGoal({ text }));
+    dispatch(createGoal({ text, importance }));
     setText("");
+    setImportance("");
   };
 
   return (
@@ -26,6 +29,18 @@ function GoalForm() {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+        </div>
+        <div className="form-group">
+          <label htmlFor="text">Importance</label>
+          <select
+            name="importance"
+            id="importance"
+            onChange={(e) => setImportance(e.target.value)}
+          >
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
         </div>
         <div className="form-group">
           <button className="btn btn-block" type="submit">

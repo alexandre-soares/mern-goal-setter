@@ -22,6 +22,10 @@ function Header() {
       <ul>
         {user ? (
           <li>
+            <p>
+              Welcome <br />
+              {user && user.name}
+            </p>
             <button className="btn" onClick={onLogout}>
               <FaSignOutAlt /> Logout
             </button>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import GoalForm from "../components/GoalForm";
@@ -14,6 +14,10 @@ function Dashboard() {
   const { goals, isLoading, isError, message } = useSelector(
     (state) => state.goals
   );
+
+  const [showForm, setShowForm] = useState(false);
+
+  const onClick = () => setShowForm(!showForm);
 
   useEffect(() => {
     if (isError) {
@@ -37,14 +41,16 @@ function Dashboard() {
 
   return (
     <>
-      <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
+      <section className="dashboard__header">
+        <h1>Your goals</h1>
+        <button onClick={onClick} className="btn btn__add-goal">
+          Add new
+        </button>
       </section>
 
-      <GoalForm />
+      {showForm ? <GoalForm /> : null}
 
-      <section className="content">
+      <section>
         {goals.length > 0 ? (
           <div className="goals">
             {goals.map((goal) => (
