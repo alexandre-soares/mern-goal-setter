@@ -30,7 +30,7 @@ function GoalForm() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="text">priority</label>
+          <label htmlFor="text">Priority</label>
           <select
             name="priority"
             id="priority"
